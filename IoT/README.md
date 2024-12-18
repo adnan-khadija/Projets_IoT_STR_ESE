@@ -45,7 +45,7 @@ Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle
    - Utilisation de **Hugging Face** pour le traitement du langage naturel et **LangChain** pour la gestion des flux de données textuelles.
    - **Technologies** : Hugging Face, LangChain, FAISS, Flask, Llama2 (7b) 3.8GB.
 
-<img width="702" alt="image" src="https://github.com/user-attachments/assets/af82c897-67be-461a-9113-68d3c47a2725" />
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/af82c897-67be-461a-9113-68d3c47a2725" />
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/e7e75f72-89f7-4b04-8d7b-1175eb0b841d" />
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/75db0b59-616c-4640-b369-1ad520756845" />
 
