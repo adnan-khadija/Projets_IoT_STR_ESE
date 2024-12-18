@@ -24,8 +24,7 @@ Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/1a82d6ad-bc67-4af1-ba42-ad062671d86b" />
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/61f89f21-36df-4489-8871-681a9321e275" />
 <img width="955" alt="image" src="https://github.com/user-attachments/assets/adbfe4f8-c109-4a2c-9034-2c78732c9ae1" />
-![image](https://github.com/user-attachments/assets/684f61a6-5110-40f5-be2b-1eed310af275)
-
+![image](https://github.com/user-attachments/assets/7af427c7-9092-4068-b038-df4bfc7d2b13)
 
 3. **Microservice 3 : Détection des Véhicules**
    - Utilisation du modèle **YOLOv8** pour la détection en temps réel des véhicules, piétons et ambulances.
