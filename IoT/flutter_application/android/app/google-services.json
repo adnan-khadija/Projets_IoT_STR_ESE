@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "56677431665",
+    "firebase_url": "https://feux-rouge-default-rtdb.firebaseio.com",
+    "project_id": "feux-rouge",
+    "storage_bucket": "feux-rouge.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56677431665:android:532f9d5cc3c374ea665ed0",
+        "android_client_info": {
+          "package_name": "com.adnan.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa8q1QoWkXQhTV_6tU8aCZef6VTjzQ-T0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
