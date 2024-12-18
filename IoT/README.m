@@ -95,11 +95,12 @@ Le projet utilise **5 microservices** distincts pour assurer une architecture mo
 
 ---
 
-## 📊 **Résultats Attendus**
+## 📊 **Résultats **
 
 - Régulation dynamique des feux en fonction du trafic détecté.
 - Visualisation des données IoT et trafic via des dashboards interactifs.
 - Communication fluide entre les microservices pour une optimisation en temps réel.
+
 
 ---
 
