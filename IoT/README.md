@@ -21,8 +21,7 @@ Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle
    - Orchestration des données IoT et traitement des informations envoyées par les capteurs.
    - **Dashboard** Node-RED pour la visualisation des données et l’interaction avec les autres services.
    - **Technologies** : Node-RED, MQTT, HTTP.
-   - <img width="959" alt="image" src="https://github.com/user-attachments/assets/1a82d6ad-bc67-4af1-ba42-ad062671d86b" />
-
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/1a82d6ad-bc67-4af1-ba42-ad062671d86b" />
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/61f89f21-36df-4489-8871-681a9321e275" />
 <img width="955" alt="image" src="https://github.com/user-attachments/assets/adbfe4f8-c109-4a2c-9034-2c78732c9ae1" />
 
@@ -40,12 +39,16 @@ Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle
 
    ![Capture d'écran de l'application mobile Flutter](chemin/vers/capture4.png)
 
-5. **Microservice 5 : IA et Prise de Décision**
+5. **Microservice 5 : Assistant IA**
    - Cette partie implémente un assistant intelligent utilisant un modèle Llama2 pour répondre aux questions de l'utilisateur en se basant sur des données chargées à partir d'un fichier CSV. 
    - Utilisation de **Hugging Face** pour le traitement du langage naturel et **LangChain** pour la gestion des flux de données textuelles.
    - **Technologies** : Hugging Face, LangChain, FAISS, Flask, Llama2 (7b) 3.8GB.
 
-   ![Capture d'écran du modèle IA et interface Flask](chemin/vers/capture5.png)
+   
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/e7e75f72-89f7-4b04-8d7b-1175eb0b841d" />
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/75db0b59-616c-4640-b369-1ad520756845" />
+![image](https://github.com/user-attachments/assets/cd874d77-f18e-442c-8e96-c50204f0471d)
+
 
 ---
 
@@ -76,8 +79,6 @@ Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle
    - Configurez le code Arduino pour envoyer les données de capteurs via MQTT.
    - Assurez-vous qu'un **broker MQTT** (Mosquitto) est en fonctionnement.
 
-   ![Capture d'écran du code Arduino sur ESP8266](chemin/vers/capture6.png)
-
 2. **Node-RED** :
    - Installez Node-RED via npm :
      ```bash
@@ -85,16 +86,12 @@ Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle
      ```
    - Importez le flow Node-RED fourni (`flow.json`).
 
-   ![Capture d'écran de l'importation du flow Node-RED](chemin/vers/capture7.png)
-
 3. **Détection des Véhicules avec YOLOv8** :
    - Installez les dépendances nécessaires pour YOLOv8 :
      ```bash
      pip install -r requirements.txt
      ```
    - Exécutez le modèle YOLOv8 pour la détection des véhicules et piétons via une caméra ou vidéo.
-
-   ![Capture d'écran de la détection d'objets avec YOLOv8](chemin/vers/capture8.png)
 
 4. **Backend Flask** :
    - Installez les dépendances Flask et LangChain :
@@ -106,13 +103,9 @@ Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle
      python app.py
      ```
 
-   ![Capture d'écran du serveur Flask en fonctionnement](chemin/vers/capture9.png)
-
 5. **Frontend Flutter** :
    - Installez Flutter depuis [flutter.dev](https://flutter.dev/).
    - Configurez l'application Flutter pour interagir avec l'API Flask.
-
-   ![Capture d'écran de l'application Flutter en fonctionnement](chemin/vers/capture10.png)
 
 ---
 
@@ -122,8 +115,6 @@ Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle
 - **Visualisation des données IoT** via un **Node-RED Dashboard**.
 - **Optimisation du trafic** grâce à l'IA, permettant une régulation optimale basée sur les conditions environnementales et de circulation.
 
-   ![Capture d'écran des résultats d'optimisation du trafic](chemin/vers/capture11.png)
-
 ---
 
 ## 🚦 **Fonctionnalités Détails**
@@ -132,13 +123,11 @@ Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle
    - Les capteurs IoT mesurent la **température**, l'**humidité**, et la **luminosité** ambiante.
    - Les données sont envoyées à Node-RED via MQTT pour un traitement en temps réel.
 
-   ![Capture d'écran de l'interface de capteurs IoT](chemin/vers/capture12.png)
 
 ### 2. **Détection des Véhicules avec YOLOv8**
    - Le modèle YOLOv8 analyse les vidéos en temps réel pour détecter les **véhicules**, les **piétons** et les **ambulances**.
    - Les résultats sont envoyés à **Flutter** pour être affichés sur une carte.
 
-   ![Capture d'écran de la détection des véhicules en temps réel](chemin/vers/capture13.png)
 
 ### 3. **Gestion Dynamique des Feux de Circulation**
    - Le système ajuste les délais de feux de circulation en fonction des conditions détectées :
@@ -146,35 +135,14 @@ Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle
      - **Piétons nombreux** : Les feux sont ajustés pour permettre un passage sécurisé.
      - **Priorité ambulance** : Le cycle des feux est instantanément modifié pour laisser passer l'ambulance.
 
-   ![Capture d'écran des feux de circulation ajustés en fonction du trafic](chemin/vers/capture14.png)
-
 ### 4. **Interface Utilisateur (Flutter)**
    - **OpenStreetMap** est utilisé pour afficher les véhicules et les feux de circulation.
    - Un **chatbot** est intégré pour répondre aux questions des utilisateurs et afficher des informations en temps réel.
-
-   ![Capture d'écran de l'interface utilisateur avec OpenStreetMap et chatbot](chemin/vers/capture15.png)
 
 ### 5. **Optimisation avec IA**
    - L'intelligence artificielle prend des décisions concernant la durée des feux en fonction de la quantité de véhicules, la météo et la présence d'ambulances.
    - **LangChain** et **Hugging Face** sont utilisés pour traiter des requêtes et stocker des informations liées à la gestion des feux.
 
-   ![Capture d'écran de l'interface IA et prise de décision](chemin/vers/capture16.png)
-
 ---
 
-## 📦 **Répertoires et Fichiers Importants**
 
-- **ESP8266** : Code Arduino pour la communication avec MQTT.
-- **Node-RED** : Flows pour l’orchestration et visualisation.
-- **YOLOv8** : Scripts Python pour la détection d'objets.
-- **Flutter** : Application mobile pour la visualisation des feux et véhicules.
-- **Backend Flask** : API pour gérer les décisions IA et contrôler les feux.
-
----
-
-## 🎯 **Objectifs à Long Terme**
-
-- Étendre le système pour gérer plusieurs intersections de trafic.
-- Ajouter des capteurs de pollution et intégrer des alertes pour les citoyens.
-- Optimiser la détection de piétons en utilisant des caméras haute résolution et des techniques avancées de traitement d'image.
-- Développer une version de l’application pour les conducteurs afin de visualiser l’état des feux en temps réel.
