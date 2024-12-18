@@ -47,10 +47,7 @@ Ce projet est une application web interactive qui permet de simuler plusieurs al
 
 ### Étapes
 
-1. *Clone le dépôt* :
-   bash
-   git clone <URL_DU_DEPOT>
-   cd <nom_du_projet>
+1. *Clone le dépôt* 
    
 
 2. *Démarrer Flask* :
