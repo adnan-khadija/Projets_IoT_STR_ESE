@@ -116,32 +116,4 @@ Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle
 
 ---
 
-## 🚦 **Fonctionnalités Détails**
-
-### 1. **Capteurs IoT et MQTT**
-   - Les capteurs IoT mesurent la **température**, l'**humidité**, et la **luminosité** ambiante.
-   - Les données sont envoyées à Node-RED via MQTT pour un traitement en temps réel.
-
-
-### 2. **Détection des Véhicules avec YOLOv8**
-   - Le modèle YOLOv8 analyse les vidéos en temps réel pour détecter les **véhicules**, les **piétons** et les **ambulances**.
-   - Les résultats sont envoyés à **Flutter** pour être affichés sur une carte.
-
-
-### 3. **Gestion Dynamique des Feux de Circulation**
-   - Le système ajuste les délais de feux de circulation en fonction des conditions détectées :
-     - **Trafic dense** : Les feux restent plus longtemps au rouge.
-     - **Piétons nombreux** : Les feux sont ajustés pour permettre un passage sécurisé.
-     - **Priorité ambulance** : Le cycle des feux est instantanément modifié pour laisser passer l'ambulance.
-
-### 4. **Interface Utilisateur (Flutter)**
-   - **OpenStreetMap** est utilisé pour afficher les véhicules et les feux de circulation.
-   - Un **chatbot** est intégré pour répondre aux questions des utilisateurs et afficher des informations en temps réel.
-
-### 5. **Optimisation avec IA**
-   - L'intelligence artificielle prend des décisions concernant la durée des feux en fonction de la quantité de véhicules, la météo et la présence d'ambulances.
-   - **LangChain** et **Hugging Face** sont utilisés pour traiter des requêtes et stocker des informations liées à la gestion des feux.
-
----
-
 
