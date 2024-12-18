@@ -1,0 +1,1318 @@
+[
+    {
+        "id": "e174fa3e98798019",
+        "type": "tab",
+        "label": "configuration node-red",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0bdc9223d450969e",
+        "type": "ui_gauge",
+        "z": "e174fa3e98798019",
+        "name": "LdrValeu",
+        "group": "639b293239590b7a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1023",
+        "colors": [
+            "#00b500",
+            "#bbbb3a",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 440,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "a43277852517e0cc",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "traffic/light/ldrValue",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "0bdc9223d450969e",
+                "68b24bdaf6447171"
+            ]
+        ]
+    },
+    {
+        "id": "68b24bdaf6447171",
+        "type": "ui_chart",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "group": "639b293239590b7a",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 350,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "72d972699d2a2562",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "traffic/vehicles",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 810,
+        "y": 40,
+        "wires": [
+            [
+                "501a395217e42acf"
+            ]
+        ]
+    },
+    {
+        "id": "501a395217e42acf",
+        "type": "ui_chart",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "group": "3c8b97f49ae2432e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Vehicules",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1060,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "14b36043be493de1",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "traffic/pedestrians",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 800,
+        "y": 100,
+        "wires": [
+            [
+                "c91f31c54982cee9"
+            ]
+        ]
+    },
+    {
+        "id": "c91f31c54982cee9",
+        "type": "ui_chart",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "group": "3c8b97f49ae2432e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "pedestrians",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1070,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8c62c58999384378",
+        "type": "ui_button",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "group": "e8921ee8abc07ce9",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Inverser les feux",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "true",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 160,
+        "y": 260,
+        "wires": [
+            [
+                "530ba631016d5527"
+            ]
+        ]
+    },
+    {
+        "id": "530ba631016d5527",
+        "type": "mqtt out",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "trafficLight/toggle",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "e3aa10b1916744f7",
+        "x": 390,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "8eb1ef17cc5da1c1",
+        "type": "debug",
+        "z": "e174fa3e98798019",
+        "name": "debug 7",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1260,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "0dd102ef3722aaf2",
+        "type": "worldmap",
+        "z": "e174fa3e98798019",
+        "name": "map3",
+        "lat": " 33.241997",
+        "lon": " -8.498266",
+        "zoom": "",
+        "layer": "OSMH",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "true",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "true",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN",
+        "maplist": "OSMG,OSMC,OSMH,EsriC,EsriS,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 1050,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "4f9eba15bfcf5454",
+        "type": "function",
+        "z": "e174fa3e98798019",
+        "name": "function 3",
+        "func": "var feux = [\n    { id: \"RL1\", lane1_status: msg.payload?.lane1_1 || \"unknown\", lane2_status: msg.payload?.lane2_1 || \"unknown\", location: { lat: 33.241997, lon: -8.498266 } },\n    { id: \"RL2\", lane1_status: msg.payload?.lane1_2 || \"unknown\", lane2_status: msg.payload?.lane2_2 || \"unknown\", location: { lat: 33.240276, lon: -8.508547 } },\n    { id: \"RL3\", lane1_status: msg.payload?.lane1_3 || \"unknown\", lane2_status: msg.payload?.lane2_3 || \"unknown\", location: { lat: 33.248000, lon: -8.517525 } }\n];\n\n// Fonction utilitaire pour déterminer la couleur\nfunction determineColor(lane1_status, lane2_status) {\n    if (lane1_status === \"red\" || lane2_status === \"red\") return \"red\";\n    if (lane1_status === \"green\" || lane2_status === \"green\") return \"green\";\n    return \"yellow\";\n}\n\n// Génération de la charge utile HTTP\nvar responsePayload = feux.map(function (feu) {\n    var lane1_status = feu.lane1_status;\n    var lane2_status = feu.lane2_status;\n    var color = \"red\";\n\n    return {\n        id: feu.id,\n        location: feu.location,\n        lane1_status: lane1_status,\n        lane2_status: lane2_status,\n        color: color\n    };\n});\n\n// Génération des données pour worldmap\nvar worldmapPayload = feux.map(function (feu) {\n    var lane1_status = feu.lane1_status;\n    var lane2_status = feu.lane2_status;\n    var color = determineColor(lane1_status, lane2_status);\n\n    return {\n        name: feu.id,\n        lat: feu.location.lat,\n        lon: feu.location.lon,\n        popup: `<b>Feu ${feu.id} :</b><br><b>Voie 1 :</b> ${lane1_status}<br><b>Voie 2 :</b> ${lane2_status}`,\n        icon: \"circle\",\n        color: color\n    };\n});\n\n// Vérification du contexte (requête HTTP ou worldmap)\nif (msg.req) {\n    // Gestion d'une requête HTTP\n    msg.payload = responsePayload; // Objet JSON complet pour la réponse\n    msg.headers = { 'Content-Type': 'application/json' };\n} else {\n    // Gestion pour worldmap\n    msg.payload = worldmapPayload;\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 460,
+        "wires": [
+            [
+                "0dd102ef3722aaf2",
+                "f5d997206ba458c5"
+            ]
+        ]
+    },
+    {
+        "id": "49f6726e1d25ffd9",
+        "type": "function",
+        "z": "e174fa3e98798019",
+        "name": "function status",
+        "func": "// Récupérer l'état du message\nvar status = msg.payload.status;\n\n// Ajouter l'identifiant de la voie\nmsg.topic = \"lane1_1\";\n\n// Transmettre l'état brut pour le regroupement\nmsg.payload = status;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 420,
+        "wires": [
+            [
+                "1e78ee59c6a1c67b"
+            ]
+        ]
+    },
+    {
+        "id": "3315358877213f7e",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "feux/intersection1/lane2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 480,
+        "wires": [
+            [
+                "ecb4daf727b242c6"
+            ]
+        ]
+    },
+    {
+        "id": "0c8eff8325f6c2a0",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "feux/intersection1/lane1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 420,
+        "wires": [
+            [
+                "49f6726e1d25ffd9"
+            ]
+        ]
+    },
+    {
+        "id": "ecb4daf727b242c6",
+        "type": "function",
+        "z": "e174fa3e98798019",
+        "name": "function status2",
+        "func": "// Récupérer l'état du message\nvar status = msg.payload.status;\n\n// Ajouter l'identifiant de la voie\nmsg.topic = \"lane2_1\";\n\n// Transmettre l'état brut pour le regroupement\nmsg.payload = status;\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 460,
+        "wires": [
+            [
+                "1e78ee59c6a1c67b"
+            ]
+        ]
+    },
+    {
+        "id": "1e78ee59c6a1c67b",
+        "type": "join",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 630,
+        "y": 460,
+        "wires": [
+            [
+                "4f9eba15bfcf5454",
+                "719419d96644abeb"
+            ]
+        ]
+    },
+    {
+        "id": "f5d997206ba458c5",
+        "type": "ui_worldmap",
+        "z": "e174fa3e98798019",
+        "group": "4100e9ed0ef14992",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "map",
+        "lat": " 33.241997",
+        "lon": "",
+        "zoom": "",
+        "layer": "OSMG",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "hide",
+        "layers": "hide",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 1050,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "12891c9d328847cb",
+        "type": "http response",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 1050,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "719419d96644abeb",
+        "type": "function",
+        "z": "e174fa3e98798019",
+        "name": "function 4",
+        "func": "// Liste des feux avec les statuts des voies et les positions\nvar feux = [\n    { id: \"RL1\", lane1_status: msg.payload?.lane1_1 || \"unknown\", lane2_status: msg.payload?.lane2_1 || \"unknown\", location: { lat: 33.241997, lon: -8.498266 } },\n    { id: \"RL2\", lane1_status: msg.payload?.lane1_2 || \"unknown\", lane2_status: msg.payload?.lane2_2 || \"unknown\", location: { lat: 33.240276, lon: -8.508547 } },\n    { id: \"RL3\", lane1_status: msg.payload?.lane1_3 || \"unknown\", lane2_status: msg.payload?.lane2_3 || \"unknown\", location: { lat: 33.248000, lon: -8.517525 } }\n];\n\n// Fonction pour déterminer la couleur en fonction du statut des voies\nfunction determineColor(lane1_status, lane2_status) {\n    // Déterminer la couleur du feu en fonction des statuts des voies\n    if (lane1_status === \"red\" || lane2_status === \"red\") return \"red\";\n    if (lane1_status === \"green\" || lane2_status === \"green\") return \"green\";\n    return \"yellow\";  // Par défaut, jaune si aucune voie n'est rouge ou verte\n}\n\n// Création du payload de réponse pour tous les feux\nlet responsePayload = feux.map(function (feu) {\n    let lane1Status = feu.lane1_status;\n    let lane2Status = feu.lane2_status;\n\n    // Déterminer la couleur du feu\n    let color = \"red\";\n\n    return {\n        id: feu.id,\n        location: feu.location,\n        lane1_status: lane1Status,\n        lane2_status: lane2Status,\n        color: color  // Couleur calculée en fonction des statuts\n    };\n});\n\n// Préparer les en-têtes HTTP pour la réponse\nmsg.payload = JSON.stringify(responsePayload); // Assurez-vous d'envoyer sous format JSON\nmsg.headers = { 'Content-Type': 'application/json' };\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 400,
+        "wires": [
+            [
+                "12891c9d328847cb"
+            ]
+        ]
+    },
+    {
+        "id": "fff013a6229908c0",
+        "type": "http in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "url": "/getTrafficStatus",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 620,
+        "y": 360,
+        "wires": [
+            [
+                "719419d96644abeb"
+            ]
+        ]
+    },
+    {
+        "id": "d121e006e0bfec93",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "traffic/delay",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1230,
+        "y": 180,
+        "wires": [
+            [
+                "f014ff4789aa6eaa",
+                "bc0a40dec9dd5209"
+            ]
+        ]
+    },
+    {
+        "id": "f014ff4789aa6eaa",
+        "type": "ui_chart",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "group": "a1ae42b204993d60",
+        "order": 0,
+        "width": "7",
+        "height": "4",
+        "label": "delay",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d72323",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1490,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bc0a40dec9dd5209",
+        "type": "ui_gauge",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "group": "a1ae42b204993d60",
+        "order": 1,
+        "width": "7",
+        "height": "4",
+        "gtype": "gage",
+        "title": "delay",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "10000",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1490,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "2b1eb280f3f67ed5",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "environment/temperature",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1250,
+        "y": 40,
+        "wires": [
+            [
+                "d7bcc8070f4a60b9"
+            ]
+        ]
+    },
+    {
+        "id": "37feab03a4888fb2",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "environment/humidity",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1260,
+        "y": 100,
+        "wires": [
+            [
+                "02b198e44cf6771e"
+            ]
+        ]
+    },
+    {
+        "id": "d7bcc8070f4a60b9",
+        "type": "ui_gauge",
+        "z": "e174fa3e98798019",
+        "name": "Température",
+        "group": "332796138f5c3ab7",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#e51f1f"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1470,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "02b198e44cf6771e",
+        "type": "ui_gauge",
+        "z": "e174fa3e98798019",
+        "name": "Humidité",
+        "group": "74a30ee51dfdb7eb",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1480,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1f3482e9f492cda7",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "traffic/light/brightness",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 20,
+        "wires": [
+            [
+                "445b3630f5d95b9e",
+                "15738a905b0ab072"
+            ]
+        ]
+    },
+    {
+        "id": "445b3630f5d95b9e",
+        "type": "ui_gauge",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "group": "98eb97ed340fee88",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "255",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "15738a905b0ab072",
+        "type": "ui_chart",
+        "z": "e174fa3e98798019",
+        "name": "brightness",
+        "group": "98eb97ed340fee88",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 530,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4381ca864d7dbacf",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "feux/intersection1/lane2",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 600,
+        "y": 240,
+        "wires": [
+            [
+                "016b6b65981db905"
+            ]
+        ]
+    },
+    {
+        "id": "6f2bf4cd595e5567",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "feux/intersection1/lane1",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "f5f2a4de32231a98"
+            ]
+        ]
+    },
+    {
+        "id": "f5f2a4de32231a98",
+        "type": "function",
+        "z": "e174fa3e98798019",
+        "name": "function status",
+        "func": "// Récupérer l'état du feu\nvar status = msg.payload.status;\n\n// Formater le message pour l'affichage sur le Dashboard\nif (status === \"red\") {\n    msg.payload = \"Rouge\";\n} else if (status === \"green\") {\n    msg.payload = \"Vert\";\n} else if (status === \"yellow\") {\n    msg.payload = \"Jaune\";\n} else {\n    msg.payload = \"Éteint\";\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 200,
+        "wires": [
+            [
+                "d1eee6dfde7da15b",
+                "8eb1ef17cc5da1c1"
+            ]
+        ]
+    },
+    {
+        "id": "016b6b65981db905",
+        "type": "function",
+        "z": "e174fa3e98798019",
+        "name": "function status",
+        "func": "// Récupérer l'état du feu\nvar status = msg.payload.status;\n\n// Formater le message pour l'affichage sur le Dashboard\nif (status === \"red\") {\n    msg.payload = \"Rouge\";\n} else if (status === \"green\") {\n    msg.payload = \"Vert\";\n} else if (status === \"yellow\") {\n    msg.payload = \"Jaune\";\n} else {\n    msg.payload = \"Éteint\";\n}\n\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 880,
+        "y": 300,
+        "wires": [
+            [
+                "1420cbeacaea455a",
+                "8eb1ef17cc5da1c1"
+            ]
+        ]
+    },
+    {
+        "id": "1420cbeacaea455a",
+        "type": "ui_led",
+        "z": "e174fa3e98798019",
+        "order": 0,
+        "group": "29544cf04bc7ec69",
+        "width": "4",
+        "height": "3",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "Rouge",
+                "valueType": "str"
+            },
+            {
+                "color": "#008000",
+                "value": "Vert",
+                "valueType": "str"
+            },
+            {
+                "color": "#ffff00",
+                "value": "Jaune",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1070,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "d1eee6dfde7da15b",
+        "type": "ui_led",
+        "z": "e174fa3e98798019",
+        "order": 0,
+        "group": "d37e92c3c4c95192",
+        "width": "4",
+        "height": "3",
+        "label": "",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "#ff0000",
+                "value": "Rouge",
+                "valueType": "str"
+            },
+            {
+                "color": "#008000",
+                "value": "Vert",
+                "valueType": "str"
+            },
+            {
+                "color": "#ffff00",
+                "value": "Jaune",
+                "valueType": "str"
+            }
+        ],
+        "allowColorForValueInMessage": false,
+        "shape": "circle",
+        "showGlow": true,
+        "name": "",
+        "x": 1050,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "e2d509d7977bd8c9",
+        "type": "ui_worldmap",
+        "z": "e174fa3e98798019",
+        "group": "4100e9ed0ef14992",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "map",
+        "lat": " 33.241997",
+        "lon": "",
+        "zoom": "",
+        "layer": "OSMG",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "hide",
+        "layers": "hide",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "true",
+        "coords": "none",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN,HM",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,EsriT,EsriDG,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 670,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "6022134a37b1ba8e",
+        "type": "inject",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "{   \"lat\": 33.241997,   \"lon\":  -8.498266,   \"icon\": \"circle\",   \"color\": \"red\",   \"name\": \"Feu Rouge 1\" }",
+        "payloadType": "json",
+        "x": 350,
+        "y": 1100,
+        "wires": [
+            [
+                "1e9a1915325ac7e6"
+            ]
+        ]
+    },
+    {
+        "id": "1e9a1915325ac7e6",
+        "type": "function",
+        "z": "e174fa3e98798019",
+        "name": "function 2",
+        "func": "msg.payload = {\n    lat: msg.payload.lat,\n    lon: msg.payload.lon,\n    name: msg.payload.name,  // Nom ou description\n    icon: msg.payload.icon,  // Type d'icône (par ex. cercle, carré)\n    color: msg.payload.color // Couleur du feu\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 1100,
+        "wires": [
+            [
+                "e2d509d7977bd8c9"
+            ]
+        ]
+    },
+    {
+        "id": "2efe5af2c080cd1d",
+        "type": "csv",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "spec": "rfc",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": "once",
+        "multi": "one",
+        "ret": "\\r\\n",
+        "temp": "temperature,humidity,numVehicles,numPedestrians,ambulanceDetected,delay_time,time",
+        "skip": "0",
+        "strings": true,
+        "include_empty_strings": "",
+        "include_null_values": true,
+        "x": 710,
+        "y": 520,
+        "wires": [
+            [
+                "84b2df2d8e940fb8"
+            ]
+        ]
+    },
+    {
+        "id": "e931290194db5ade",
+        "type": "function",
+        "z": "e174fa3e98798019",
+        "name": "function 7",
+        "func": "// Supposons que vous recevez un objet JSON avec les données de température, humidité, véhicules, piétons, etc.\nvar temperature = msg.payload.temperature;  // Récupérer la température du message MQTT\nvar humidity = msg.payload.humidity;  // Récupérer l'humidité du message MQTT\nvar numVehicles = msg.payload.numVehicles;  // Nombre de véhicules\nvar numPedestrians = msg.payload.numPedestrians;  // Nombre de piétons\nvar ambulanceDetected = msg.payload.ambulanceDetected;  // Ambulance détectée\nvar delay_time = msg.payload.delay_time;  // Temps de retard\n\n// Ajouter l'horodatage actuel (au format ISO 8601, vous pouvez le personnaliser si nécessaire)\nvar currentTime = new Date().toISOString();  // Exemple: \"2024-12-15T14:23:45.123Z\"\n\n// Créer un nouvel objet JSON avec toutes les informations, y compris l'horodatage\nvar m = {\n    'temperature': temperature,\n    'humidity': humidity,\n    'numVehicles': numVehicles,\n    'numPedestrians': numPedestrians,\n    'ambulanceDetected': ambulanceDetected,\n    'delay_time': delay_time,\n    'time': currentTime  // Ajouter l'horodatage ici\n};\n\n// Retourner le message avec l'objet JSON formé\nreturn { payload: m };\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 540,
+        "wires": [
+            [
+                "2efe5af2c080cd1d"
+            ]
+        ]
+    },
+    {
+        "id": "128f636fcaeb2dfb",
+        "type": "mqtt in",
+        "z": "e174fa3e98798019",
+        "name": "",
+        "topic": "feux_de_circulation/env",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "e3aa10b1916744f7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 560,
+        "wires": [
+            [
+                "e931290194db5ade"
+            ]
+        ]
+    },
+    {
+        "id": "84b2df2d8e940fb8",
+        "type": "file",
+        "z": "e174fa3e98798019",
+        "name": "file path",
+        "filename": "D:\\IoT\\feux_rouge_intellegnet\\chat\\data.csv",
+        "filenameType": "str",
+        "appendNewline": true,
+        "createDir": true,
+        "overwriteFile": "false",
+        "encoding": "utf8",
+        "x": 960,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "639b293239590b7a",
+        "type": "ui_group",
+        "name": "LDR",
+        "tab": "e69e1a3630a2e57a",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e3aa10b1916744f7",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.26.200",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "3c8b97f49ae2432e",
+        "type": "ui_group",
+        "name": "statistique",
+        "tab": "4b4cd6bd8e354070",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e8921ee8abc07ce9",
+        "type": "ui_group",
+        "name": "Inverstion d'état",
+        "tab": "4b4cd6bd8e354070",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4100e9ed0ef14992",
+        "type": "ui_group",
+        "name": "map",
+        "tab": "e831bea38b913c33",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "a1ae42b204993d60",
+        "type": "ui_group",
+        "name": "delay",
+        "tab": "e69e1a3630a2e57a",
+        "order": 3,
+        "disp": true,
+        "width": "10",
+        "collapse": true,
+        "className": ""
+    },
+    {
+        "id": "332796138f5c3ab7",
+        "type": "ui_group",
+        "name": "Temperature",
+        "tab": "4b4cd6bd8e354070",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "74a30ee51dfdb7eb",
+        "type": "ui_group",
+        "name": "Humidité",
+        "tab": "4b4cd6bd8e354070",
+        "order": 3,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "98eb97ed340fee88",
+        "type": "ui_group",
+        "name": "brightness",
+        "tab": "e69e1a3630a2e57a",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "29544cf04bc7ec69",
+        "type": "ui_group",
+        "name": "voie 2",
+        "tab": "4b4cd6bd8e354070",
+        "order": 5,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "d37e92c3c4c95192",
+        "type": "ui_group",
+        "name": "voie 1",
+        "tab": "4b4cd6bd8e354070",
+        "order": 4,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e69e1a3630a2e57a",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "4b4cd6bd8e354070",
+        "type": "ui_tab",
+        "name": "Tab 2",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e831bea38b913c33",
+        "type": "ui_tab",
+        "name": "Tab 3",
+        "icon": "dashboard",
+        "order": 3
+    }
+]
