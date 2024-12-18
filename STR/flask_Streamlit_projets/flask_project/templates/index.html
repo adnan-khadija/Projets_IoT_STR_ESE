@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Simulator</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            color: #212529;
+        }
+        .header {
+            text-align: center;
+            padding: 2em;
+            background: linear-gradient(135deg, #4f93ce, #28587b);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+        .header p {
+            margin-top: 0.5em;
+            font-size: 1.2em;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2em auto;
+            padding: 2em;
+            background: white;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .algorithm-select {
+            margin: 2em 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .algorithm-select label {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+        .algorithm-select select {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.8em;
+            font-size: 1.1em;
+            margin-bottom: 1em;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            background: #f8f9fa;
+            color: #212529;
+        }
+        .simulate-btn {
+            background-color: #4f93ce;
+            color: white;
+            padding: 0.8em 2em;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .simulate-btn:hover {
+            background-color: #28587b;
+            transform: scale(1.05);
+        }
+        .process-table {
+            margin-top: 2em;
+        }
+        .process-table h3 {
+            text-align: center;
+            font-size: 1.5em;
+            color: #212529;
+        }
+        .process-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .process-table th, .process-table td {
+            padding: 1em;
+            border: 1px solid #dee2e6;
+            text-align: center;
+        }
+        .process-table th {
+            background-color: #4f93ce;
+            color: white;
+        }
+        .process-table td input {
+            width: 90%;
+            padding: 0.5em;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        .process-table button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            font-size: 0.9em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .process-table button:hover {
+            background-color: #a71d2a;
+        }
+        .results {
+            margin-top: 2em;
+            text-align: center;
+        }
+        .results h2 {
+            font-size: 1.8em;
+            color: #212529;
+            margin-bottom: 1em;
+        }
+        .results h3 {
+            font-size: 1.5em;
+            margin-bottom: 1em;
+        }
+        .gantt-chart {
+            margin-top: 2em;
+            text-align: center;
+        }
+        .gantt-chart img {
+            max-width: 100%;
+            border: 1px solid #ced4da;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 1em;
+            background: #4f93ce;
+            color: white;
+            margin-top: 2em;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Scheduling Algorithm Simulator</h1>
+        <p>Select an algorithm, add processes, and simulate scheduling tasks visually.</p>
+    </div>
+
+    <div class="container">
+        <form id="simulation-form">
+            <div class="algorithm-select">
+                <label for="algorithm">Choose Algorithm:</label>
+                <select id="algorithm" required>
+                    <option value="">Select...</option>
+                    <option value="fcfs">First Come First Serve (FCFS)</option>
+                    <option value="sjf">Shortest Job First (SJF)</option>
+                    <option value="llf">Least Laxity First (LLF)</option>
+                    <option value="edf">Earliest Deadline First (EDF)</option>
+                    <option value="rm">Rate Monotonic (RM)</option>
+                    <option value="dm">Deadline Monotonic (DM)</option>
+                </select>
+            </div>
+
+            <div class="process-table">
+                <h3>Processes</h3>
+                <table id="process-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Arrival Time</th>
+                            <th>Burst Time</th>
+                            <th>Deadline</th>
+                            <th>Period</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" value="P1"></td>
+                            <td><input type="number" value="0"></td>
+                            <td><input type="number" value="5"></td>
+                            <td><input type="number" value="10"></td>
+                            <td><input type="number" value="15"></td>
+                            <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" onclick="addRow()" style="background-color: #28a745; color: white; padding: 0.5em 1em; font-size: 1em; border-radius: 5px; cursor: pointer;">Add Process</button>
+            </div>
+
+            <button type="button" class="simulate-btn" onclick="simulate()">Simulate</button>
+        </form>
+        <div class="results" id="results">
+            <!-- Simulation Results Here -->
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Scheduling Algorithm Simulator. All rights reserved.
+    </footer>
+
+    <script>
+        function addRow() {
+            const table = document.getElementById('process-table').getElementsByTagName('tbody')[0];
+            const newRow = table.insertRow();
+            newRow.innerHTML = `
+                <td><input type="text" value="P${table.rows.length}"></td>
+                <td><input type="number" value="0"></td>
+                <td><input type="number" value="1"></td>
+                <td><input type="number" value="10"></td>
+                <td><input type="number" value="20"></td>
+                <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+            `;
+        }
+
+        function removeRow(button) {
+            const row = button.parentElement.parentElement;
+            row.parentElement.removeChild(row);
+        }
+
+        async function simulate() {
+            const algorithm = document.getElementById('algorithm').value;
+            if (!algorithm) {
+                alert('Please select an algorithm.');
+                return;
+            }
+
+            const table = document.getElementById('process-table').getElementsByTagName('tbody')[0];
+            const processes = [];
+            for (let i = 0; i < table.rows.length; i++) {
+                const row = table.rows[i];
+                processes.push({
+                    name: row.cells[0].querySelector('input').value,
+                    arrival: parseFloat(row.cells[1].querySelector('input').value),
+                    burst: parseFloat(row.cells[2].querySelector('input').value),
+                    deadline: parseFloat(row.cells[3].querySelector('input').value),
+                    period: parseFloat(row.cells[4].querySelector('input').value)
+                });
+            }
+
+            const response = await fetch('/simulate', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ algorithm, processes })
+            });
+
+            if (!response.ok) {
+                alert('Simulation failed.');
+                return;
+            }
+
+            const data = await response.json();
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <h2>Average Waiting Time: ${data.awt.toFixed(2)}</h2>
+                <h3>Gantt Chart:</h3>
+                <div class="gantt-chart">
+                    <img src="data:image/png;base64,${data.gantt_chart}" alt="Gantt Chart">
+                </div>
+            `;
+        }
+    </script>
+</body>
+</html>
