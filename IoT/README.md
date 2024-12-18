@@ -11,6 +11,7 @@ Le système ajuste dynamiquement les feux de circulation en fonction de plusieur
 ## 🛠️ **Architecture du Projet**
 
 Le projet est constitué de **5 microservices** distincts, chacun ayant un rôle précis dans l'architecture globale du système :
+
 ![image](https://github.com/user-attachments/assets/c027e866-6dec-4306-95f9-bcc32b8e7363)
 
 1. **Microservice 1 : IoT Sensor (ESP8266)**
